@@ -1,16 +1,18 @@
 # Nexmo APIs Quickstart Examples for Node.JS
 
+<img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
+
 
 Quickstarts also available for: [Java](https://github.com/nexmo-community/nexmo-java-quickstart), [.NET](https://github.com/nexmo-community/nexmo-dotnet-quickstart), [PHP](https://github.com/nexmo-community/nexmo-php-quickstart), [Python](https://github.com/nexmo-community/nexmo-python-quickstart), [Ruby](https://github.com/nexmo-community/nexmo-ruby-quickstart)
 
-The purpose of the quickstart guide is to provide simple examples focused on one goal. For example, sending an SMS, handling an incoming SMS webhook or making a Text to Speech call.
+These code samples are meant to be used for [https://developer.nexmo.com/](https://developer.nexmo.com/), and are structured in such a way as to be used for internal testing. Developers are free to use these code snippets as a reference, but these may require changes to be worked into your specific application. We recommend checking out the [Nexmo Developer Website](https://developer.nexmo.com/), which displays these code snippets in a more copy/paste fashion.
 
 ## Configure with Your Nexmo API Keys
 
-To use this sample you will first need a [Nexmo account](https://dashboard.nexmo.com/sign-up). Once you have your own API credentials, rename
+If you'd still like to use this sample you will first need a [Nexmo account](https://dashboard.nexmo.com/sign-up). Once you have your own API credentials, rename
 the `.env-example` file to `.env` and set the values as required.
 
-For some of the examples you will need to [buy a number](https://dashboard.nexmo.com/buy-numbers).
+For some of the examples, you will need to [buy a number](https://dashboard.nexmo.com/buy-numbers).
 
 ## Tutorials & Sample Code
 
@@ -36,7 +38,7 @@ For some of the examples you will need to [buy a number](https://dashboard.nexmo
 
 | Tutorial                  | Code Sample                              |
 | ------------------------- | ---------------------------------------- |
-| Two-Factor Authentication | [2fa.js](https://github.com/nexmo-community/nexmo-node-quickstart/blob/master/verify/2fa.js) and [UI code](https://github.com/nexmo-community/nexmo-node-quickstart/tree/master/verify/views) |
+| [Two-Factor Authentication](https://www.nexmo.com/blog/2017/04/11/implement-two-factor-authentication-2fa-web-apps-node-js-dr/) | [2fa.js](https://github.com/nexmo-community/nexmo-node-quickstart/blob/master/verify/2fa.js) and [UI code](https://github.com/nexmo-community/nexmo-node-quickstart/tree/master/verify/views) |
 
 
 
@@ -46,7 +48,7 @@ Please [raise an issue](/../../issues/) to request an example that isn't present
 
 ## Licenses
 
-- The code samples in this repo is under [MIT](LICENSE)
+- The code samples in this repo are under [MIT](LICENSE)
 
 - The tutorials contents are under Creative Commons, [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 

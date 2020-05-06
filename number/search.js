@@ -1,21 +1,42 @@
-require('dotenv').config({path: __dirname + '/../.env'});
+require('dotenv').config({ path: __dirname + '/../.env' })
 
-var NEXMO_API_KEY = process.env.NEXMO_API_KEY;
-var NEXMO_API_SECRET = process.env.NEXMO_API_SECRET;
+const NEXMO_API_KEY = process.env.NEXMO_API_KEY
+const NEXMO_API_SECRET = process.env.NEXMO_API_SECRET
+const COUNTRY_CODE = process.env.COUNTRY_CODE
+const NEXMO_NUMBER_TYPE = process.env.NEXMO_NUMBER_TYPE
+const NEXMO_NUMBER_FEATURES = process.env.NEXMO_NUMBER_FEATURES
+const NUMBER_SEARCH_CRITERIA = process.env.NUMBER_SEARCH_CRITERIA
+const NUMBER_SEARCH_PATTERN = process.env.NUMBER_SEARCH_PATTERN
 
-var Nexmo = require('nexmo');
+const Nexmo = require('nexmo')
 
-var nexmo = new Nexmo({apiKey: NEXMO_API_KEY, apiSecret: NEXMO_API_SECRET}, {debug: true});
-
-nexmo.number.search('GB', {features: 'SMS'}, function(err, res) {
-  if(err) {
-    console.error(err)
+const nexmo = new Nexmo(
+  {
+    apiKey: NEXMO_API_KEY,
+    apiSecret: NEXMO_API_SECRET
+  },
+  {
+    debug: true
   }
-  else {
-    console.log(res);
-    console.log(res.numbers[0].features);
-    
-    var numbers = res.numbers;
-    // do something with numbers
+)
+
+nexmo.number.search(
+  COUNTRY_CODE,
+  {
+    type: NEXMO_NUMBER_TYPE,
+    pattern: NUMBER_SEARCH_CRITERIA,
+    search_pattern: NUMBER_SEARCH_PATTERN,
+    features: NEXMO_NUMBER_FEATURES
+  },
+  (err, res) => {
+    if (err) {
+      console.error(err)
+    }
+    else {
+      console.log(`Here are ${res.numbers.length} of the ${res.count} matching numbers available for purchase:`)
+      res.numbers.forEach((number) => {
+        console.log(`Tel: ${number.msisdn} Cost: ${number.cost}`)
+      })
+    }
   }
-});
+)
